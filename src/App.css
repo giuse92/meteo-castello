@@ -3,6 +3,55 @@ nav {
   flex-direction: row;
   align-items: center;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   background-color: aqua;
+  padding: 0 25px
+}
+
+.contenitore {
+  width: 1024px;
+  margin: 0 auto;
+}
+
+.contenitore-current-weather {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background-color: blue;
+  color: white;
+  padding: 0 20px;
+} 
+
+.contenitore-current-weather .blocco-testuale h1 {
+  font-weight: 500;
+}
+
+.contenitore-current-weather .blocco-testuale .sottotitolo {
+  margin-top: -30px;
+  color: rgba(204, 204, 204, 0.685);
+}
+
+.contenitore-current-weather .blocco-testuale .gradi {
+  font-size: 50px;
+  margin-top: -20px;
+}
+
+.contenitore-current-weather .blocco-testuale .descrizione-tempo {
+  width: 90%;
+  margin-top: -20px;
+}
+
+.contenitore-current-weather .icona {
+  width: 10%;
+  margin: 0 auto;
+}
+
+.contenitore-current-weather .icona img {
+  width: 250px;
+}
+
+footer {
+  text-align: center;
 }
