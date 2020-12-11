@@ -9,48 +9,61 @@ nav {
 }
 
 .contenitore {
-  width: 1024px;
+  width: 50%;
   margin: 0 auto;
 }
 
-.contenitore-current-weather {
+.contenitore-sez {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
-  justify-content: space-between;
-  background-color: blue;
+  justify-content: space-between;  
   color: white;
   padding: 0 20px;
-} 
+}
 
-.contenitore-current-weather .blocco-testuale h1 {
+.current-weather {
+  background-color: blue;
+}
+
+.contenitore-sez.current-weather .blocco-testuale h1 {
   font-weight: 500;
 }
 
-.contenitore-current-weather .blocco-testuale .sottotitolo {
+.contenitore-sez.current-weather .blocco-testuale .sottotitolo {
   margin-top: -30px;
   color: rgba(204, 204, 204, 0.685);
 }
 
-.contenitore-current-weather .blocco-testuale .gradi {
+.contenitore-sez.current-weather .blocco-testuale .gradi {
   font-size: 50px;
   margin-top: -20px;
 }
 
-.contenitore-current-weather .blocco-testuale .descrizione-tempo {
+.contenitore-sez.current-weather .blocco-testuale .descrizione-tempo {
   width: 90%;
   margin-top: -20px;
 }
 
-.contenitore-current-weather .icona {
-  width: 10%;
+.contenitore-sez.current-weather .icona {
   margin: 0 auto;
 }
 
-.contenitore-current-weather .icona img {
+.contenitore-sez.current-weather .icona img {
   width: 250px;
 }
+
+.contenitore-sez.cw-detail {
+  background-color: cornflowerblue;
+  padding: 20px;
+}
+
+.contenitore-sez.cw-detail table {
+  width: 100%;
+  margin: 0 auto;
+}
+
 
 footer {
   text-align: center;
