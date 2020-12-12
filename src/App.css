@@ -32,7 +32,7 @@ nav {
 }
 
 .contenitore-sez.current-weather .blocco-testuale .sottotitolo {
-  margin-top: -30px;
+  margin-top: -27px;
   color: rgba(204, 204, 204, 0.685);
 }
 
@@ -62,6 +62,7 @@ nav {
 .contenitore-sez.cw-detail table {
   width: 100%;
   margin: 0 auto;
+  text-align: center;
 }
 
 
