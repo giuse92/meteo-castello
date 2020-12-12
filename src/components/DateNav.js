@@ -13,7 +13,7 @@ const DateNav = () => {
     
     return (
     <div>
-        <span>Castelfranco Emilia&nbsp;⏲️&nbsp;{`${date.getUTCHours()+1}:${date.getUTCMinutes() < 10 ? "0" + date.getUTCMinutes() : date.getUTCMinutes()}`}</span> 
+        <span>Ora locale&nbsp;⏲️&nbsp;{`${date.getUTCHours()+1}:${date.getUTCMinutes() < 10 ? "0" + date.getUTCMinutes() : date.getUTCMinutes()}`}</span> 
     </div>
     )
 }

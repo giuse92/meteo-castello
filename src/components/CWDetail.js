@@ -1,7 +1,9 @@
 import React from 'react';
 
 const CWDetail = ({ currentState, error, isItLoaded}) => {
-  
+    
+    if (error) return <p>Errore</p>
+    else if (!isItLoaded) return <p>In caricamento</p>
     return (
         <section className="contenitore-sez cw-detail">
             <table>
