@@ -24,22 +24,32 @@ const ForecastWeather = () => {
     if (err) return <p>Errore</p>
     else if (!isLoaded) return <p>Caricamento in corso...</p>
     return (
-        <div className="forecast">
-           {forecastDayState.map((elmt, i) => {
-               const forecastDate = new Date(elmt.date);
-               return (
-                   <>
-                       <button onClick={(ev) => alert(ev.currentTarget.textContent)}><h2 key={`title-${i}`}>{`${forecastDate.getDate()}-${forecastDate.getMonth()}-${forecastDate.getFullYear()}`}</h2></button>
-                       {elmt.hour.map((hour, idx) => {
-                           const dayForHours = new Date(hour.time);
-                           return (
-                               <p key={`hour-${idx}`}>{`Previsioni delle ${dayForHours.getHours()}`}</p>
-                           )
-                       })}
-                   </>
-               )
-           })} 
-        </div>
+        <section className="forecast">
+            {forecastDayState.map((elmt, i) => {
+                const forecastDate = new Date(elmt.date);
+                return (
+                    <div key={`title-${i}`}>
+                        <button onClick={ev => {
+                            ev.currentTarget.nextElementSibling.style.display === 'none' 
+                            ? ev.currentTarget.nextElementSibling.style.display = 'block'
+                            : ev.currentTarget.nextElementSibling.style.display = 'none' 
+                        }}>
+                            <h2>
+                                {`${forecastDate.getDate()}-${forecastDate.getMonth()}-${forecastDate.getFullYear()}`}
+                            </h2>
+                        </button>
+                        <div style={{ display: 'none' }}>
+                            {elmt.hour.map((hour, idx) => {
+                                const dayForHours = new Date(hour.time);
+                                return (
+                                    <p key={`hour-${idx}`}>{`Alle ${dayForHours.getHours()}:`}</p>
+                                )
+                            })}
+                        </div>
+                    </div>
+                )
+            })}
+        </section>
     )
 }
 
