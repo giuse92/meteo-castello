@@ -4,8 +4,11 @@ nav {
   align-items: center;
   flex-wrap: wrap;
   justify-content: space-between;
-  background-color: aqua;
   padding: 0 25px
+}
+
+nav img {
+  height: 100px;
 }
 
 .contenitore {
@@ -51,7 +54,7 @@ nav {
 }
 
 .contenitore-sez.current-weather .icona img {
-  width: 250px;
+  width: 150px;
 }
 
 .contenitore-sez.cw-detail {
@@ -63,6 +66,7 @@ nav {
   width: 100%;
   margin: 0 auto;
   text-align: center;
+  font-size: 25px;
 }
 
 

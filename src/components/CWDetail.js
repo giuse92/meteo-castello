@@ -19,7 +19,7 @@ const CWDetail = ({ currentState, error, isItLoaded}) => {
                         <td>Raffica vento: {`${currentState.gust_kph}`} km/h</td>
                     </tr>
                     <tr>
-                        <td>Direzione vento: {`${currentState.wind_degree}`}</td>
+                        <td>Direzione vento: {`${currentState.wind_degree}`} °</td>
                         <td>Pressione: {`${currentState.pressure_mb}`} mb</td>
                     </tr>
                 </tbody>

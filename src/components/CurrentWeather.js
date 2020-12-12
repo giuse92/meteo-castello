@@ -24,14 +24,21 @@ const CurrentWeather = () => {
             });
     }, [currentState, conditionState, err, isLoaded]);
 
-    if (err) return <p>Errore</p>
-    else if(!isLoaded) return <p>In caricamento</p>
+    const lastDateUpdated = new Date(currentState.last_updated);
+    const lastDayUpdated = lastDateUpdated.getDate();
+    const lastMonthUpdated = lastDateUpdated.getMonth()+1;
+    const lastYearUpdated = lastDateUpdated.getFullYear();
+    const lastHourUpdated = lastDateUpdated.getHours();
+    const lastMinutesUpdated = lastDateUpdated.getMinutes();
+
+    if (err) return <p style={{textAlign: 'center'}}>Errore</p>
+    else if(!isLoaded) return <p style={{textAlign: 'center'}}>In caricamento</p>
     return (
         <>
             <section className="contenitore-sez current-weather">
                 <div className="blocco-testuale">
                     <h1>Meteo di Castelfranco Emilia adesso</h1>
-                    <p className="sottotitolo">ultimo aggiornamento: {`${currentState.last_updated}`}</p>
+                    <p className="sottotitolo">ultimo aggiornamento: {`${lastDayUpdated}-${lastMonthUpdated}-${lastYearUpdated} ore ${lastHourUpdated}:${lastMinutesUpdated}`}</p>
                     <p className="gradi">{`${currentState.temp_c}`} °C</p>
                     <p className="descrizione-tempo">{`${conditionState.text}`}</p>
                 </div>
