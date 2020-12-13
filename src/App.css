@@ -24,6 +24,7 @@ nav img {
   justify-content: space-between;  
   color: white;
   padding: 0 20px;
+  margin: 0 0 10px 0;
 }
 
 .current-weather {
@@ -71,14 +72,15 @@ nav img {
 
 .forecast .previsione-giorno button {
   width: 100%;
-  border: 0;
+  border: 1px solid black;
   padding: 10px 5px;
   margin: 5px 0;
   font-weight: 600;
   font-size: 20px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+}
+
+.forecast .previsione-giorno button:hover {
+  cursor: pointer;
 }
 
 .forecast .previsione-giorno .previsione-per-ora .dettaglio-per-ora {
@@ -88,10 +90,50 @@ nav img {
   padding: 0 10px;
 }
 
+.gradiente-am {
+  background: rgb(79,133,187);
+  background: -moz-linear-gradient(-45deg,  rgba(79,133,187,1) 0%, rgba(79,133,187,1) 100%);
+  background: -webkit-linear-gradient(-45deg,  rgba(79,133,187,1) 0%,rgba(79,133,187,1) 100%);
+  background: linear-gradient(135deg,  rgba(79,133,187,1) 0%,rgba(79,133,187,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4f85bb', endColorstr='#4f85bb',GradientType=1 );
+}
+
+.gradiente-pm {
+  background: rgb(178,225,255);
+  background: -moz-linear-gradient(-45deg,  rgba(178,225,255,1) 0%, rgba(102,182,252,1) 100%);
+  background: -webkit-linear-gradient(-45deg,  rgba(178,225,255,1) 0%,rgba(102,182,252,1) 100%);
+  background: linear-gradient(135deg,  rgba(178,225,255,1) 0%,rgba(102,182,252,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b2e1ff', endColorstr='#66b6fc',GradientType=1 );
+}
+
+.forecast .previsione-giorno .previsione-per-ora .dettaglio-per-ora h5 {
+  margin: 10px 0 0 0;
+}
+
 .forecast .previsione-giorno .previsione-per-ora span,
-.forecast .previsione-giorno .previsione-per-ora p,
-.forecast .previsione-giorno .previsione-per-ora table {
+.forecast .previsione-giorno .previsione-per-ora p {
   margin: 0;
+}
+
+.forecast .previsione-giorno .previsione-per-ora table {
+  margin: 0 0 10px 0px;
+}
+
+.forecast .previsione-giorno .previsione-per-ora table th,
+.forecast .previsione-giorno .previsione-per-ora table td {
+  border: 1px solid #ccc;
+}
+
+.forecast .previsione-giorno .previsione-per-ora .dettaglio-per-ora span {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.forecast .previsione-giorno .previsione-per-ora .dettaglio-per-ora span img {
+  margin-right: 5px;
 }
 
 .forecast .previsione-giorno .previsione-per-ora table tbody {

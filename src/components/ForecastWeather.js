@@ -31,29 +31,26 @@ const ForecastWeather = () => {
     else if (!isLoaded) return <p>Caricamento in corso...</p>
     return (
         <section className="forecast">
-            <small>Previsioni ora per ora di oggi e delle prossime 48 ore</small>
+            <small>Previsioni ora per ora di oggi e dei prossimi due giorni</small>
             {forecastDayState.map((elmt, i) => {
                 const forecastDate = new Date(elmt.date);
                 return (
                     <div className="previsione-giorno" key={`title-${i}`}>
                         <button onClick={toggleForecast}>
                             <span>
-                                {`${forecastDate.getDate()}-${forecastDate.getMonth() + 1}-${forecastDate.getFullYear()}`}
-                            </span>
-                            <span>
-
+                                {`${forecastDate.getDate()}-${forecastDate.getMonth() + 1}-${forecastDate.getFullYear()} `}
                             </span>
                         </button>
                         <div className="previsione-per-ora" style={{ display: 'none' }}>
                             {elmt.hour.map((hour, idx) => {
                                 const dayForHours = new Date(hour.time);
                                 return (
-                                    <div className="dettaglio-per-ora">
+                                    <div key={`hour-${idx}`} className={hour.is_day === 0 ? "dettaglio-per-ora gradiente-am" : "dettaglio-per-ora gradiente-pm"}>
+                                        <h5>{`Ore ${dayForHours.getHours()}:00`}</h5>
                                         <span>
-                                            <h5 key={`hour-${idx}`}>{`Alle ${dayForHours.getHours()}:`}</h5>
                                             <img src={`${hour.condition.icon}`} alt={`${hour.condition.text}`}></img>
+                                            <p>{hour.condition.text}</p>
                                         </span>
-                                        <p>{hour.condition.text}</p>
                                         <table>
                                             <tbody>
                                                 <tr>
