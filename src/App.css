@@ -69,10 +69,33 @@ nav img {
   font-size: 25px;
 }
 
-.forecast .previsione-giorno .previsione-per-ora h5,
+.forecast .previsione-giorno button {
+  width: 100%;
+  border: 0;
+  padding: 10px 5px;
+  margin: 5px 0;
+  font-weight: 600;
+  font-size: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.forecast .previsione-giorno .previsione-per-ora .dettaglio-per-ora {
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 10px 0;
+  padding: 0 10px;
+}
+
+.forecast .previsione-giorno .previsione-per-ora span,
 .forecast .previsione-giorno .previsione-per-ora p,
 .forecast .previsione-giorno .previsione-per-ora table {
-  margin: 5px;
+  margin: 0;
+}
+
+.forecast .previsione-giorno .previsione-per-ora table tbody {
+  text-align: center;
 }
 
 footer {

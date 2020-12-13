@@ -31,19 +31,28 @@ const ForecastWeather = () => {
     else if (!isLoaded) return <p>Caricamento in corso...</p>
     return (
         <section className="forecast">
+            <small>Previsioni ora per ora di oggi e delle prossime 48 ore</small>
             {forecastDayState.map((elmt, i) => {
                 const forecastDate = new Date(elmt.date);
                 return (
                     <div className="previsione-giorno" key={`title-${i}`}>
                         <button onClick={toggleForecast}>
-                            {`${forecastDate.getDate()}-${forecastDate.getMonth()}-${forecastDate.getFullYear()} ora per ora`}
+                            <span>
+                                {`${forecastDate.getDate()}-${forecastDate.getMonth() + 1}-${forecastDate.getFullYear()}`}
+                            </span>
+                            <span>
+
+                            </span>
                         </button>
                         <div className="previsione-per-ora" style={{ display: 'none' }}>
                             {elmt.hour.map((hour, idx) => {
                                 const dayForHours = new Date(hour.time);
                                 return (
-                                    <>
-                                        <h5 key={`hour-${idx}`}>{`Alle ${dayForHours.getHours()}:`}</h5>
+                                    <div className="dettaglio-per-ora">
+                                        <span>
+                                            <h5 key={`hour-${idx}`}>{`Alle ${dayForHours.getHours()}:`}</h5>
+                                            <img src={`${hour.condition.icon}`} alt={`${hour.condition.text}`}></img>
+                                        </span>
                                         <p>{hour.condition.text}</p>
                                         <table>
                                             <tbody>
@@ -69,7 +78,7 @@ const ForecastWeather = () => {
                                                 </tr>
                                             </tbody>
                                         </table>
-                                    </>
+                                    </div>
                                 )
                             })}
                         </div>
