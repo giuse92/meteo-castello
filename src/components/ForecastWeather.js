@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 
 const apiKey = process.env.REACT_APP_API_KEY;
 const API_URL_FORECAST = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=Castelfranco+Emilia&lang=it&days=10`;
@@ -21,6 +21,12 @@ const ForecastWeather = () => {
             });
     }, [forecastDayState, err, isLoaded]);
 
+    const toggleForecast = ev => {
+        ev.currentTarget.nextElementSibling.style.display === 'none'
+            ? ev.currentTarget.nextElementSibling.style.display = 'block'
+            : ev.currentTarget.nextElementSibling.style.display = 'none'
+    }
+
     if (err) return <p>Errore</p>
     else if (!isLoaded) return <p>Caricamento in corso...</p>
     return (
@@ -28,21 +34,42 @@ const ForecastWeather = () => {
             {forecastDayState.map((elmt, i) => {
                 const forecastDate = new Date(elmt.date);
                 return (
-                    <div key={`title-${i}`}>
-                        <button onClick={ev => {
-                            ev.currentTarget.nextElementSibling.style.display === 'none' 
-                            ? ev.currentTarget.nextElementSibling.style.display = 'block'
-                            : ev.currentTarget.nextElementSibling.style.display = 'none' 
-                        }}>
-                            <h2>
-                                {`${forecastDate.getDate()}-${forecastDate.getMonth()}-${forecastDate.getFullYear()}`}
-                            </h2>
+                    <div className="previsione-giorno" key={`title-${i}`}>
+                        <button onClick={toggleForecast}>
+                            {`${forecastDate.getDate()}-${forecastDate.getMonth()}-${forecastDate.getFullYear()} ora per ora`}
                         </button>
-                        <div style={{ display: 'none' }}>
+                        <div className="previsione-per-ora" style={{ display: 'none' }}>
                             {elmt.hour.map((hour, idx) => {
                                 const dayForHours = new Date(hour.time);
                                 return (
-                                    <p key={`hour-${idx}`}>{`Alle ${dayForHours.getHours()}:`}</p>
+                                    <>
+                                        <h5 key={`hour-${idx}`}>{`Alle ${dayForHours.getHours()}:`}</h5>
+                                        <p>{hour.condition.text}</p>
+                                        <table>
+                                            <tbody>
+                                                <tr>
+                                                    <th>Temperatura</th>
+                                                    <th>Percepiti</th>
+                                                    <th>Indice di calore</th>
+                                                    <th>Punto di rugiada</th>
+                                                    <th>Visibilità</th>
+                                                    <th>Possibilità di pioggia</th>
+                                                    <th>Possibilità di neve</th>
+                                                    <th>Velocità del vento max</th>
+                                                </tr>
+                                                <tr>
+                                                    <td>{hour.temp_c} °C</td>
+                                                    <td>{hour.feelslike_c} °C</td>
+                                                    <td>{hour.heatindex_c} °C</td>
+                                                    <td>{hour.dewpoint_c} °C</td>
+                                                    <td>{hour.vis_km} km</td>
+                                                    <td>{hour.chance_of_rain} %</td>
+                                                    <td>{hour.chance_of_snow} %</td>
+                                                    <td>{hour.wind_kph} km/h</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </>
                                 )
                             })}
                         </div>

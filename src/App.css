@@ -69,6 +69,11 @@ nav img {
   font-size: 25px;
 }
 
+.forecast .previsione-giorno .previsione-per-ora h5,
+.forecast .previsione-giorno .previsione-per-ora p,
+.forecast .previsione-giorno .previsione-per-ora table {
+  margin: 5px;
+}
 
 footer {
   text-align: center;
