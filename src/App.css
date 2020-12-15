@@ -1,9 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
 nav {
   display: flex;
   flex-direction: row;
   align-items: center;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   padding: 0 25px
 }
 
@@ -67,7 +75,11 @@ nav img {
   width: 100%;
   margin: 0 auto;
   text-align: center;
-  font-size: 25px;
+  font-size: 20px;
+}
+
+.contenitore-sez.cw-detail table td {
+  border: 1px solid #ccc;
 }
 
 .forecast .previsione-giorno button {
@@ -116,7 +128,7 @@ nav img {
 }
 
 .forecast .previsione-giorno .previsione-per-ora table {
-  margin: 0 0 10px 0px;
+  padding: 0 0 10px 0px;
 }
 
 .forecast .previsione-giorno .previsione-per-ora table th,
@@ -142,4 +154,16 @@ nav img {
 
 footer {
   text-align: center;
+}
+
+/*Responsive*/
+
+@media only screen and (min-width:320px) and (max-width:768px) {
+  .contenitore {
+    width: 100%
+  }
+
+  .contenitore-sez.cw-detail table {
+    font-size: 17px;
+  }
 }
