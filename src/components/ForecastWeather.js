@@ -19,7 +19,7 @@ const ForecastWeather = () => {
                 setIsLoaded(true);
                 setErr(err)
             });
-    }, [forecastDayState, err, isLoaded]);
+    }, []);
 
     const toggleForecast = ev => {
         ev.currentTarget.nextElementSibling.style.display === 'none'

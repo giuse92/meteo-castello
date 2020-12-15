@@ -36,7 +36,11 @@ nav img {
 }
 
 .current-weather {
-  background-color: blue;
+  background: rgb(64,150,238);
+  background: -moz-linear-gradient(-45deg,  rgba(64,150,238,1) 0%, rgba(64,150,238,1) 100%);
+  background: -webkit-linear-gradient(-45deg,  rgba(64,150,238,1) 0%,rgba(64,150,238,1) 100%);
+  background: linear-gradient(135deg,  rgba(64,150,238,1) 0%,rgba(64,150,238,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4096ee', endColorstr='#4096ee',GradientType=1 );
 }
 
 .contenitore-sez.current-weather .blocco-testuale h1 {
@@ -45,7 +49,7 @@ nav img {
 
 .contenitore-sez.current-weather .blocco-testuale .sottotitolo {
   margin-top: -27px;
-  color: rgba(204, 204, 204, 0.685);
+  color: black;
 }
 
 .contenitore-sez.current-weather .blocco-testuale .gradi {
@@ -153,12 +157,47 @@ nav img {
 }
 
 footer {
+  display: flex;
+  flex-direction: column;
   text-align: center;
 }
 
 /*Responsive*/
 
-@media only screen and (min-width:320px) and (max-width:768px) {
+@media only screen and (max-width:1235px) {
+  .contenitore {
+    padding: 0 5px;
+  }
+
+  .forecast .previsione-giorno .previsione-per-ora table {
+    display: flex;
+    justify-content: center;
+  }
+
+  .forecast .previsione-giorno .previsione-per-ora table tbody {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .forecast .previsione-giorno .previsione-per-ora table tbody tr {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .forecast .previsione-giorno .previsione-per-ora table tbody tr th,
+  .forecast .previsione-giorno .previsione-per-ora table tbody tr td {
+    padding: 0 5vw
+  }
+}
+
+@media only screen and (min-width:769px) and (max-width:849px) {
+  .forecast .previsione-giorno .previsione-per-ora table tbody tr th,
+  .forecast .previsione-giorno .previsione-per-ora table tbody tr td {
+    padding: 0 2vw
+  }
+}
+
+@media only screen and (max-width:768px) {
   .contenitore {
     width: 100%
   }

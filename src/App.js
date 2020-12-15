@@ -16,8 +16,10 @@ function App() {
         <CurrentWeather />
         <ForecastWeather />
       </main>
-      <footer>
-        Powered by <a href="https://www.weatherapi.com/" title="Free Weather API">WeatherAPI.com</a>
+      <footer className="contenitore">
+        <span>Powered by <a href="https://www.weatherapi.com/" title="Free Weather API">WeatherAPI.com</a></span> 
+        <span>Sito a scopo informativo, non sono richiesti nè dati nè si fa uso di Analytics per tracciare il traffico</span>
+        <a href="mailto:giuseppe.ilsami@gmail.com" rel="nofollow">Email dev</a>
       </footer>
     </>
   );

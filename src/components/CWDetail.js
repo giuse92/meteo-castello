@@ -7,6 +7,7 @@ const CWDetail = ({ currentState, error, isItLoaded}) => {
     return (
         <section className="contenitore-sez cw-detail">
             <table>
+                <caption>Nel dettaglio:</caption>
                 <tbody>
                     <tr>
                         <td>Temperatura percepita: {`${currentState.feelslike_c}`} °C</td>
