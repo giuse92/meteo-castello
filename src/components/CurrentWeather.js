@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import CWDetail from './CWDetail';
+import CurrentWeatherContext from "./CurrentWeatherContext";
 
 const apiKey = process.env.REACT_APP_API_KEY;
 const API_URL = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=Castelfranco+Emilia&lang=it`;
@@ -46,7 +47,9 @@ const CurrentWeather = () => {
                     <img src={`${conditionState.icon}`} alt={`${conditionState.text}`}></img>
                 </div>
             </section>
-            <CWDetail currentState={currentState} error={err} isItLoaded={isLoaded} />
+            <CurrentWeatherContext.Provider value={{ currentState, conditionState, err, isLoaded }}>
+                <CWDetail />
+            </CurrentWeatherContext.Provider>
         </>
     );
 }

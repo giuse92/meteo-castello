@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import CurrentWeatherContext from "./CurrentWeatherContext";
 
-const CWDetail = ({ currentState, error, isItLoaded}) => {
+const CWDetail = () => {
+    const { currentState, err, isLoaded } = useContext(CurrentWeatherContext);
     
-    if (error) return <p>Errore</p>
-    else if (!isItLoaded) return <p>In caricamento</p>
+    if (err) return <p>Errore</p>
+    else if (!isLoaded) return <p>In caricamento</p>
     return (
         <section className="contenitore-sez cw-detail">
             <table>
