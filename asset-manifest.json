@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/meteo-castello/static/css/main.f1b2c13a.chunk.css",
+    "main.js": "/meteo-castello/static/js/main.3bd9077c.chunk.js",
+    "main.js.map": "/meteo-castello/static/js/main.3bd9077c.chunk.js.map",
+    "runtime-main.js": "/meteo-castello/static/js/runtime-main.0c3dd5de.js",
+    "runtime-main.js.map": "/meteo-castello/static/js/runtime-main.0c3dd5de.js.map",
+    "static/js/2.c5556d08.chunk.js": "/meteo-castello/static/js/2.c5556d08.chunk.js",
+    "static/js/2.c5556d08.chunk.js.map": "/meteo-castello/static/js/2.c5556d08.chunk.js.map",
+    "static/js/3.9f793614.chunk.js": "/meteo-castello/static/js/3.9f793614.chunk.js",
+    "static/js/3.9f793614.chunk.js.map": "/meteo-castello/static/js/3.9f793614.chunk.js.map",
+    "index.html": "/meteo-castello/index.html",
+    "static/css/main.f1b2c13a.chunk.css.map": "/meteo-castello/static/css/main.f1b2c13a.chunk.css.map",
+    "static/js/2.c5556d08.chunk.js.LICENSE.txt": "/meteo-castello/static/js/2.c5556d08.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0c3dd5de.js",
+    "static/js/2.c5556d08.chunk.js",
+    "static/css/main.f1b2c13a.chunk.css",
+    "static/js/main.3bd9077c.chunk.js"
+  ]
+}
